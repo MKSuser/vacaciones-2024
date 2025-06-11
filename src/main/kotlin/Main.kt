@@ -158,6 +158,10 @@ class Tour(
 
     }
 
+    fun mailsPersonasAnotadas(): List<String> {
+        return personasAnotadas.map { it.mail }
+    }
+
 }
 
 /*************************************************************************************************/
@@ -208,21 +212,17 @@ class EnviarMail: PostConfirmacionObservers {
     override fun ejecutar(tour: Tour) {
         val fechaLimite = tour.fechaSalida.minusDays(30)
 
-        mailSender.sendMail(
-            Mail(
+        tour.mailsPersonasAnotadas().forEach {
+            mailSender.sendMail(Mail(
                 from = "admin@admin.com",
-                to = mailsDestino(tour),
-                subject = "el tour ha sido confirmado!",
+                to = it,
+                subject = "El tour ha sido confirmado!",
                 content = "La fecha de salida será el día ${tour.fechaSalida}" +
                         "La fecha límite de pago será el día $fechaLimite" +
                         "Visitaremos los siguientes lugares:" +
-                        lugaresAVisitarEnMail(tour)
+                        lugaresAVisitarEnMail(tour)            )
             )
-        )
-    }
-
-    fun mailsDestino(tour: Tour): String{
-        return tour.personasAnotadas.joinToString(", ") {it.mail}
+        }
     }
 
     fun lugaresAVisitarEnMail(tour: Tour): String{
