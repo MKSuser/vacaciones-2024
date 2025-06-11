@@ -70,10 +70,10 @@ class Balneario(
 
 /***************************************************************************************************/
 class Persona(
-    var presupuestoMaximo:Int,
-    var mail:String,
-    var dni: String
 ){
+    var presupuestoMaximo:Int = 0
+    lateinit var mail:String
+    lateinit  var dni: String
     lateinit var preferenciaParaVacaciones : Preferencia
 
     fun leGusta(lugar:Lugar): Boolean{
@@ -126,10 +126,10 @@ class Combineta: Preferencia{
 /*************************************************************************************************/
 
 class Tour(
-    val fechaSalida: LocalDate,
-    var cantidadTotalDePersonas: Int = 0,
-    var montoPorPersona: Int
 ){
+    val fechaSalida: LocalDate = LocalDate.now()
+    var cantidadTotalDePersonas: Int = 0
+    var montoPorPersona: Int = 10000
     val lugaresAVisitar = mutableListOf<Lugar>()
     val personasAnotadas = mutableListOf<Persona>()
     var confirmado: Boolean = false
