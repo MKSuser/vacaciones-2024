@@ -162,6 +162,14 @@ class Tour(
         return personasAnotadas.map { it.mail }
     }
 
+    fun codigosDeLugares(): String{
+        return lugaresAVisitar.joinToString(", ") {it.codigo}
+    }
+
+    fun dnisDePersonas(): String{
+        return personasAnotadas.joinToString(", ") {it.dni}
+    }
+
 }
 
 /*************************************************************************************************/
@@ -255,19 +263,12 @@ class MontoSuperadoInformarAFIP(val notificador: AFIPSender): PostConfirmacionOb
 
         notificador.notificarAFIP(
             InterfazAFIP(
-                codigosDeLugares(tour),
-                dnisDePersonas(tour)
+                tour.codigosDeLugares(),
+                tour.dnisDePersonas()
             )
         )
     }
 
-    fun codigosDeLugares(tour:Tour): String{
-        return tour.lugaresAVisitar.joinToString(", ") {it.codigo}
-    }
-
-    fun dnisDePersonas(tour:Tour): String{
-        return tour.personasAnotadas.joinToString(", ") {it.dni}
-    }
 }
 /***************************/
 interface AFIPSender { // Como no te dice con qué manda simulamos otro tipo de sender
