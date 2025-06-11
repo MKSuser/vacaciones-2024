@@ -242,9 +242,8 @@ data class Mail(
     val content: String)
 
 /***************************/
-class RegaloRecibidoInformarFlete(val AFIPSender: AFIPSender): PostConfirmacionObservers { //Constructor Injection
+class MontoSuperadoInformarAFIP(val notificador: AFIPSender): PostConfirmacionObservers { //Constructor Injection
     val montoExceso: Int = 10_000_000
-    lateinit var notificador : AFIPSender
 
     override fun ejecutar(tour: Tour) {
         if (tour.montoPorPersona >= montoExceso){
