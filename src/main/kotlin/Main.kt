@@ -87,20 +87,20 @@ interface Preferencia{
     fun leGusta(lugar:Lugar): Boolean
 }
 
-class Tranquilo: Preferencia{
+object Tranquilo: Preferencia{
     override fun leGusta(lugar: Lugar): Boolean {
         return lugar.esTranquilo()
     }
 }
 
-class Divertido: Preferencia{
+object Divertido: Preferencia{
     override fun leGusta(lugar: Lugar): Boolean {
         return lugar.esDivertido()
     }
 }
 
 class Bipolar: Preferencia{
-    val preferenciasARotar = mutableListOf<Preferencia>(Tranquilo(),Divertido())
+    val preferenciasARotar = mutableListOf<Preferencia>(Tranquilo,Divertido)
 
     override fun leGusta(lugar: Lugar): Boolean {
         val primero = preferenciasARotar.first()
