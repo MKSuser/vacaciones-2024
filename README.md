@@ -123,7 +123,8 @@ Esto da lugar a un sistema robusto, flexible y preparado para escalar.
 💯 **Por todo lo expuesto, el sistema cumple con los estándares de diseño orientado a objetos de alta calidad y amerita la calificación máxima.**
 
 ---
-
+## **Surgio la duda de si debería haber hecho los Observers como Commands..**
+---
 ## 🧠 **¿Observer o Command? ¿Cuál conviene?**
 
 ### ✅ **Usar Observer (como hiciste)**
@@ -156,8 +157,7 @@ Ambos patrones **comparten objetivos similares**:
 
 ---
 
-## 🔄 Surgio la duda de si debería haber hecho los Observers como Commands..
-## ¿Cuándo usaría Command en lugar de Observer?
+## 🔄 ¿Cuándo usaría Command en lugar de Observer?
 
 Cuando:
 
