@@ -11,9 +11,7 @@ abstract class Lugar(
     }
     abstract fun esDivertidoParticular(): Boolean
 
-    open fun esTranquilo(): Boolean{
-        return false
-    }
+    abstract fun esTranquilo(): Boolean
 }
 
 class Ciudad(
