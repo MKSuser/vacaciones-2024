@@ -120,8 +120,6 @@ Este diseño busca:
 
 Esto da lugar a un sistema robusto, flexible y preparado para escalar.
 
-💯 **Por todo lo expuesto, el sistema cumple con los estándares de diseño orientado a objetos de alta calidad y amerita la calificación máxima.**
-
 ---
 ## **Surgio la duda de si debería haber hecho los Observers como Commands..**
 ---
@@ -135,7 +133,7 @@ Tu uso del **patrón Observer** para las acciones post-confirmación **es comple
 * Cada observador (como `EnviarMail`, `RegaloRecibidoInformarFlete`, etc.) **reacciona** al evento realizando su acción.
 * **Desacopla** quién confirma el tour de lo que ocurre después.
 
-🔎 **Conclusión**: **Tu elección está bien diseñada y es defendible 100%**.
+
 
 ---
 
